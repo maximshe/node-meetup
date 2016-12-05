@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/maximshe/node-meetup/issues"
   },
-  "homepage": "https://github.com/maximshe/node-meetup#readme"
+  "homepage": "https://github.com/maximshe/node-meetup#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
