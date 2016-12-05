@@ -1,0 +1,20 @@
+{
+  "name": "node-meetup",
+  "version": "1.0.0",
+  "description": "Simple Node demo project for meetup",
+  "main": "hello-world.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximshe/node-meetup.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maximshe/node-meetup/issues"
+  },
+  "homepage": "https://github.com/maximshe/node-meetup#readme"
+}
