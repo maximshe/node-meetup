@@ -45,6 +45,24 @@ app.get('/hello', function (req, res) {
     res.send('Hello ' + req.query.name + '!');
 });
 
+app.get('/bye', function (req, res) {
+    if (req.query.name === null || req.query.name === undefined || req.query.name === "") {
+        res.status(400);
+        res.render('400');
+        return;
+    }
+    if (req.accepts('html')) {
+        res.send('<h1>Bye <em>' + req.query.name + '</em>!</h1>');
+        return;
+    }
+    if (req.accepts('json')) {
+        res.json({ "message": "Bye " + req.query.name + "!" });
+        return;
+    }
+
+    res.send('Bye ' + req.query.name + '!');
+});
+
 // custom 404 page
 app.use(function (req, res) {
     res.status(404);
