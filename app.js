@@ -27,6 +27,24 @@ app.get('/about', function (req, res) {
     res.render('about', { fortune: randomFortune });
 });
 
+app.get('/hello', function (req, res) {
+    if (req.query.name === null || req.query.name === undefined || req.query.name === "") {
+        res.status(400);
+        res.render('400');
+        return;
+    }
+    if (req.accepts('html')) {
+        res.send('<h1>Hello <em>' + req.query.name + '</em>!</h1>');
+        return;
+    }
+    if (req.accepts('json')) {
+        res.json({ "message": "Hello " + req.query.name + "!" });
+        return;
+    }
+
+    res.send('Hello ' + req.query.name + '!');
+});
+
 // custom 404 page
 app.use(function (req, res) {
     res.status(404);
